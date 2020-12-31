@@ -1,0 +1,57 @@
+   <button type="submit" formmethod="post">Submit using POST</button> -->
+    <!-- <form method="post">
+    <button type="submit" name="testas" value="RUN" ></button>
+        <br/>
+</form>
+
+<?php
+
+function testfun()
+{
+   echo "Your test function on button click is working";
+}
+
+if(array_key_exists('testas',$_POST)){
+   testfun();
+}
+
+if(isset($_POST['testas'])) { 
+    print ("reikia trinti faila " . $_POST['testas']); 
+    
+}
+?>
+
+$myfiles = scandir($mydir, SCANDIR_SORT_NONE); 
+
+    //displaying the files in the directory   
+ 
+    $filenametype_arr = getfiles_Names_Type($myfiles);
+        // print("<br>");
+        // print ("Failai: ");
+        // print_r ($filenametype_arr); 
+        // print("<br>");
+
+    $dir_arr = get_folders($myfiles);
+        // print ("Direktorijos: ");
+        // print_r($dirArr);
+        // print("<br>");
+
+    $typeclr_arr = getcolorfortype(array_values($filenametype_arr), $nicecolor_arr);
+        // print_r($typecolor_arr);
+        // print("<br>");
+    
+    
+    create_allhtml ($filenametype_arr, $dir_arr, $typeclr_arr, $mydir);
+    // create_tophtml($typeclr_arr);
+
+    // create_candyhtml('candy.css', $nicecolor_arr[0]);
+    if(isset($_POST['filedelete'])) { 
+        print ("reikia trinti faila " . $_POST['filedelete']);   
+    }
+    if(isset($_POST['dir'])) {
+        $dirtogo = $_POST['dir'];
+        $dirtogo = $mydir.$dirtogo;
+        // print ("reikia eiti i " . $dirtogo); 
+
+
+    }

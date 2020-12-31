@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <!-- Modalas -->
+        <div id="trinti_modalas" class="modalas">
+            <div class="modalo_vidus">
+                <label>Ar tikrai norite ištrinti?</label>
+                <button id="taip" type="submit" class="taip-ne">Taip</button>
+                <button id="ne" type="submit" class="taip-ne">Ne</button>
+            </div>
+        </div>
+        <!-- Slotai -->
+        <div class="slots">
+            <div class="slot">
+                <div class="top">
+                    <h2>To Do</h2>
+                    <div class="pliusas" id="pliusas"></div>
+                    <div class="siuksline" id="siuksline"></div>
+                </div>
+                <div class="inner_slot" id="slot_todo">
+                    <div class="hidden" id="task_plius">
+                        <input
+                            type="text"
+                            id="naujas_task"
+                            onfocus="this.value=''"
+                            value="Įveskite naują užduotį"
+                        />
+                        <button id="do" type="submit">Do</button>
+                        <button id="Cancel" type="submit">Cancel</button>
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="1232wtgfdcasd"
+                    >
+                        Isnesti siuksles
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="6u5ytegrsfdgf"
+                    >
+                        Paskambinti sodrai
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="312435ygterfadsf"
+                    >
+                        Nusiplauti masina
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="098765rwaszdxfcvg"
+                    >
+                        Palaistyti geles
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="098765rwasertyjregfadsdgfhygfd"
+                    >
+                        Palaistyti geles
+                    </div>
+                    <div
+                        class="task"
+                        draggable="true"
+                        data-element="098765rrtyu76543w"
+                    >
+                        Palaistyti geles
+                    </div>
+                </div>
+            </div>
+            <div class="slot">
+                <div class="top">
+                    <h2>Doing</h2>
+                </div>
+                <div class="inner_slot" id="slot_doing"></div>
+            </div>
+
+            <div class="slot">
+                <div class="top">
+                    <h2>Done</h2>
+                </div>
+                <div class="inner_slot" id="slot_done"></div>
+            </div>
+        </div>
+        <script src="main.js"></script>
+    </body>
+</html>
