@@ -53,7 +53,6 @@
     // print_r($myfiles);
     // // print("<br>");
     
-
     // $mydir=$dir[0].DIRECTORY_SEPARATOR.$mydirs[0];
     // print_r("mydir =" . $mydir . "<br>");
     
@@ -67,8 +66,6 @@
     // }
     // print("<br>");
     
-  
-
     // $myfiles = array_diff(scandir($mydir), array('..', '.'));
     // $myfiles = scandir($mydir);
     // $myfiles  = array_values($myfiles);
