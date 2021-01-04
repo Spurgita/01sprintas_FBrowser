@@ -4,7 +4,7 @@
 }
 html {
     font-size: 0.8rem;
-    /* font-family: "Shadows Into Light", cursive; */
+    font-family: "Shadows Into Light", cursive;
 }
 body {
     width: 90vw;
@@ -23,16 +23,25 @@ body {
     /* border: solid 2px red; */
 }
 .right {
-    width: 30%;
+    width: 25%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-bottom: 1rem;
     /* border: solid 2px green; */
 }
 .candy_jar_top {
-    width: 50%;
+    width: 100%;
     height: 10%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.candy_jar_top_center {
+    width: 50%;
+    height: 100%;
     margin: auto;
     justify-content: center;
     align-items: center;
@@ -41,14 +50,16 @@ body {
     border: solid 10px black;
     border-bottom: none;
 }
-.plus_dir {
-    width: 6rem;
-    height: 5rem;
-    position: relative;
-    background-image: url("./images/candy_jar_shape_shadow.png");
-    background-size: contain;
-    background-repeat: no-repeat;
+.candy_jar_top_left,
+.candy_jar_top_right {
+    width: 25%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
 }
+
 .candy_jar_botom {
     width: 100%;
     height: 70%;
@@ -109,7 +120,7 @@ body {
     background-repeat: no-repeat;
 }
 .candy_type {
-    width: 70%;
+    width: 75%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -168,12 +179,25 @@ body {
     background-color: red;
     transform: scale(1.6);
 }
+.plus_dir {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-image: url("./images/candy_jar_shape_shadow.png");
+    background-size: 6rem;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
 .plus_dir_form {
-    position: absolute;
-    left: 2.4rem;
-    top: 1.9rem;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 .plus_dir_button {
+    margin: auto;
     border-style: none;
     display: block;
     height: 1.5rem;
@@ -188,4 +212,26 @@ body {
 .plus_dir_button:hover {
     background-color: red;
     transform: scale(1.6);
+}
+.plus_dir_name {
+    display: block;
+    width: 100%;
+    height: 30%;
+    /* position: absolute; */
+}
+.back_form {
+    width: 100%;
+    height: 80%;
+    display: flex;
+    /* border: solid 2px red; */
+}
+.back_dir {
+    border-style: none;
+    width: 100%;
+    background-color: Transparent;
+    background-image: url("./images/back_arrow.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    /* border: solid 2px green; */
 }

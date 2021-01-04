@@ -1,27 +1,5 @@
 <?php
-function printArray($arr){
-    print($arr[0]);
-    for ($i=1; $i<count($arr); $i++){
-        print(", " . $arr[$i]);
-    }
-    print (".");
-}
 
-function print_asoc_array($arr){
-    foreach ($arr as $key =>$val) print( $key . ' ' . $val . "\n");
-    print ("<br>");  
-}
-
-function print_multi_asoc_array($arr){
-    for ($i=0; $i<count($arr); $i++) {
-        $keys = array_keys($arr[$i]);   
-        for($j=0; $j < count($keys); $j++) {
-          print( $keys[$j] . ' ' . $arr[$i][$keys[$j]] . "\n");
-        }
-        print ("<br>");
-    }
-      
-}
 //grazina tipo spalva
 function find_color_bytype ($typeformatch, $typeclr_arr){
     foreach($typeclr_arr as $type => $clr){
@@ -37,6 +15,8 @@ function prepare_colors_forvalues($niceclrarr, $lenght){
     $clrarr=[];
     if ($lenght>count($niceclrarr)) {
         print("neuztenka graziu spalvu");
+        $randomcolor="#ec1c5a";
+        array_push($clrarr, $randomcolor);  
         // TODO parasyti papildomu spalvu generacijos funkcija
     } else
     for ($i=0; $i<$lenght; $i++) {
@@ -57,7 +37,8 @@ function getfiles_Names_Types($myfiles, $mydir){
         if(is_file($elem)) {
             $txt = pathinfo($elem, PATHINFO_FILENAME);
             // print (" txt = " . $txt);
-            array_push($arrkeys, $txt);
+            // array_push($arrkeys, $txt); //tik failo vardas
+            array_push($arrkeys, $elem);
             $ext = pathinfo($elem, PATHINFO_EXTENSION);
             array_push($arrvalues, $ext);        
         } 
@@ -68,13 +49,13 @@ function getfiles_Names_Types($myfiles, $mydir){
     return ($file_arr);
 }
 // grazina folderiu masyva
-function get_folders($myfiles, $mydir){
+function get_folders($myfiles, $mypath){
     $dirArr = [];
     foreach($myfiles as $vnt) {
-        // $elem = $mydir.DIRECTORY_SEPARATOR.$vnt;
-        if(is_dir($vnt)) array_push($dirArr, $vnt);   
+        $elem = $mypath.DIRECTORY_SEPARATOR. $vnt;
+        // print("elem=" . $elem . "<br>");
+        if(is_dir($elem)) array_push($dirArr, $vnt);   
     }     
-    array_splice($dirArr, 0, 2); // reiktu patikrinti ar taskai
     // print_r($dirArr);
     return ($dirArr);
 }
@@ -90,6 +71,29 @@ function getcolorfortype($arr, $color_arr){
     return($typeclr_arr);
 }
 
+//failo atsisiuntimas
 
+function file_download($filename, $filepath){
+    print('Path to download: '  . './' . $_GET["path"] . $_POST['download']);
+    // $file =  './' . $_POST['download'];
+    $file = "./" . $_GET['path']  . $_GET['file'];
+    // a&nbsp;b.txt
+    // a b.txt
+    $fileToDownloadEscaped = str_replace("&nbsp;", " ", htmlentities($file, null, 'utf-8'));
+    ob_clean();
+    ob_start();
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/pdf'); // mime type → ši forma turėtų veikti daugumai failų, su šiuo mime type. Jei neveiktų reiktų daryti sudėtingesnę logiką
+    header('Content-Disposition: attachment; filename=' . basename($fileToDownloadEscaped));
+    header('Content-Transfer-Encoding: binary');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Pragma: public');
+    header('Content-Length: ' . filesize($fileToDownloadEscaped)); // kiek baitų browseriui laukti, jei 0 - failas neveiks nors bus sukurtas
+    ob_end_flush();
+    readfile($fileToDownloadEscaped);
+    
+    exit; 
+}
 
 ?>

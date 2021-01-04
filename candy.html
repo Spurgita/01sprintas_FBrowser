@@ -22,6 +22,14 @@
             <div class="right">
                 <div class="plus_dir">
                     <form class="plus_dir_form" method="post">
+                        <input
+                            type="text"
+                            class="plus_dir_name"
+                            name="plus_dir"
+                            onfocus="this.placeholder=''"
+                            placeholder="New folder name"
+                            value=""
+                        />
                         <button
                             type="submit"
                             class="plus_dir_button"
@@ -32,7 +40,17 @@
                 </div>
             </div>
         </div>
-        <div class="candy_jar_top">Directory name</div>
+        <div class="candy_jar_top">
+            <div class="candy_jar_top_left"></div>
+            <div class="candy_jar_top_center">Directory name</div>
+            <div class="candy_jar_top_right">
+                <form class="back_form" method="post">
+                    <button type="submit" class="back_dir" name="back" value="">
+                        BACK
+                    </button>
+                </form>
+            </div>
+        </div>
         <div class="candy_jar_botom">
             <div class="candies">
                 <!-- SALDAINIS -->
