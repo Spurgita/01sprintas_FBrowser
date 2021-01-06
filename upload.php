@@ -18,8 +18,8 @@ if (isset($_POST['submitBtn'])) {
         if ($file_error === 0) {
             if ($file_size < 1000000) {
                 $file_name_new = uniqid('', true) . "." . $file_actual_ext;
-                $file_destination = '$files' . $file_name_new;
-                move_uploaded_file($file_tmp, $path . $file_name);
+                // print("uploadinam: " . $mypath .DIRECTORY_SEPARATOR. $file_name);
+                move_uploaded_file($file_tmp, $mypath . DIRECTORY_SEPARATOR. $file_name);
             } else {
                 echo "Your file is too big!";
             }
@@ -31,9 +31,9 @@ if (isset($_POST['submitBtn'])) {
     }
 }
 // kad automatiskai refreshintu page ir matytusi
-// if (isset($_POST['submitBtn'])) {
-//     header("Refresh:1");
-// }
-
+if (isset($_POST['submitBtn'])) {
+    // print("reikia refresho po upload");
+    header("Refresh:1");
+}
 
 ?>

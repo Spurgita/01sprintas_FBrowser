@@ -15,7 +15,6 @@
 <?php
 //////////////////////////////////
 
-    // include('login.php');
     include('workwithfiles.php');
     include('workwithhtml.php');
 
@@ -70,19 +69,23 @@
             mkdir($newdirpath);
             array_push($dir_arr, $newdirname);
         }
+        header("Refresh:1");
     }
     // Failo delete
     if (isset($_POST['filedelete'])){
         $filename=$_POST['filedelete'];
-        print("trinti faila " . $filename);
+        // print("trinti faila " . $filename);
         if (file_exists($filename)){
             unlink($filename);
         }
+        header("Refresh:1");
     }
+   
   
     // Failo upload
     require_once 'upload.php'; 
- 
+    
+
 
     // Failo download
 
