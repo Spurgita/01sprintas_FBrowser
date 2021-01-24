@@ -73,12 +73,8 @@ function getcolorfortype($arr, $color_arr){
 
 //failo atsisiuntimas
 
-function file_download($filename, $filepath){
-    print('Path to download: '  . './' . $_GET["path"] . $_POST['download']);
-    // $file =  './' . $_POST['download'];
-    $file = "./" . $_GET['path']  . $_GET['file'];
-    // a&nbsp;b.txt
-    // a b.txt
+function file_download($file){
+
     $fileToDownloadEscaped = str_replace("&nbsp;", " ", htmlentities($file, null, 'utf-8'));
     ob_clean();
     ob_start();

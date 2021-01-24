@@ -98,9 +98,6 @@ function create_backpath($currentpath){
 function create_bottomhtml($filenametype_arr, $dir_arr, $typeclr_arr, $currentdir){
     print('<div class="candy_jar_top">');
     // Failo upload
-    // if (isset($_POST['submitBtn'])) {
-    //     header("Refresh:1");
-    // }
     print(' <div class="candy_jar_top_left">
     <form action="" method="POST" enctype="multipart/form-data">
 			<input type="file" name="file">
